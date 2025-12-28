@@ -1,4 +1,4 @@
-# windows11-scripts
+# Windows11-scripts
 
 Windows 11用の便利なスクリプト集
 
