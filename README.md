@@ -1,4 +1,4 @@
-# win11-tools
+# windows11-scripts
 
 Windows 11用の便利なツールコレクション
 
