@@ -3,9 +3,13 @@
 Bluetooth ヘッドセットの「Hands-Free（通話用 / HFP）」が録音・配信の音質を落とす/勝手に切り替わるのを避けるために、
 Windows の PnP デバイスとして見える Hands-Free 関連デバイスを有効/無効化します。
 
-このフォルダには2つの PowerShell スクリプトがあります。
+このフォルダには2つの PowerShell スクリプト（本体）があります。
 - `check-handsfree.ps1`：状態確認（読み取り専用）
 - `toggle-handsfree.ps1`：Hands-Free を OFF/ON/TOGGLE（変更系。管理者権限（昇格）が必要）
+
+サンプル（機種名入りの実行例）:
+- `example.WH-CH720N-mode_off.ps1`
+- `example.WH-CH720N-mode_on.ps1`
 
 ## 前提
 
@@ -13,7 +17,7 @@ Windows の PnP デバイスとして見える Hands-Free 関連デバイスを�
 - PowerShell から実行
 - **`toggle-handsfree.ps1` の `-Mode on/off/toggle` は管理者権限（管理者として実行）が必要**（`status` は不要）
 
-## まず状態確認（安全）
+## 状態確認とデバイス名の確認
 
 すべて表示:
 
@@ -27,15 +31,17 @@ Windows の PnP デバイスとして見える Hands-Free 関連デバイスを�
 .\check-handsfree.ps1 -DeviceName "WH-CH720N"
 ```
 
-## 録音の運用（おすすめ）
+## 利用例
 
-録音前に OFF（管理者権限で実行）:
+OBS などの配信/録音ソフト利用時に、Hands-Free（HFP）へ勝手に切り替わって音質が落ちる問題の回避を想定しています。
+
+Hands-Free を使わない用途（録音・配信・ゲームなど）のときは OFF（管理者権限で実行）:
 
 ```powershell
 .\toggle-handsfree.ps1 -Mode off -DeviceName "WH-CH720N"
 ```
 
-録音後に ON（管理者権限で実行）:
+Hands-Free を使うツール（例: Slack / Google Chat）を使う直前に ON（管理者権限で実行）:
 
 ```powershell
 .\toggle-handsfree.ps1 -Mode on -DeviceName "WH-CH720N"
@@ -85,4 +91,13 @@ powershell -ExecutionPolicy Bypass -File .\toggle-handsfree.ps1 -Mode status -De
 powershell -ExecutionPolicy Bypass -File .\toggle-handsfree.ps1 -Mode off    -DeviceName "WH-CH720N"
 powershell -ExecutionPolicy Bypass -File .\toggle-handsfree.ps1 -Mode on     -DeviceName "WH-CH720N"
 powershell -ExecutionPolicy Bypass -File .\toggle-handsfree.ps1 -Mode toggle -DeviceName "WH-CH720N"
+```
+
+## サンプル（機種名入り）
+
+中身は `toggle-handsfree.ps1` を呼び出しているだけなので、お手持ちの機種名を自分の環境に合わせてください。
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\example.WH-CH720N-mode_off.ps1
+powershell -ExecutionPolicy Bypass -File .\example.WH-CH720N-mode_on.ps1
 ```
