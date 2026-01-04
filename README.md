@@ -1,19 +1,27 @@
 # Windows11-scripts
 
-Windows 11用の便利なスクリプト集
+Windows 11 向けの PowerShell スクリプトをまとめたリポジトリです。検索挙動の調整や Bluetooth ハンズフリー制御など、日常運用のちょっとした手間を減らすツールを収録しています。
 
-## スクリプト一覧
+## 環境
+- Windows 11
+- PowerShell 5.1 または PowerShell 7
 
-### BingBlocker
-Windows 11のレジストリを操作してBing検索を無効化するスクリプトです。Windowsの検索ボックスからBing検索結果を表示させないようにします。
+## セットアップ
+- スクリプトを実行する端末で実行ポリシーを確認し、必要に応じて Bypass などに設定する
+- 管理者権限が必要なスクリプトは PowerShell を管理者として起動してから実行する
 
-[BingBlockerの詳細説明](./BingBlocker/README.md)
+## 使い方
+- 各スクリプトの詳細な使い方はサブフォルダの README を参照する
+- 実行前に内容を確認し、必要に応じてバックアップを取得する
 
-### Bluetooth Hands-Free Toggle
-BluetoothヘッドセットのHands-Free（通話用 / HFP）を OFF/ON して、OBS などの配信/録音ソフト利用時の音質劣化や勝手な切替を避けるためのスクリプトです。
-(OBSなどを利用すると音声がシャワシャワするような音質低下を防ぐことができます)
-Windows 11 の設定（デバイスのプロパティ）から「ハンズフリーテレフォニー」のチェックを外すことで問題解決できますが、ハンズフリーを利用したくなったときに再度プロパティを開いたりするのは面倒です。
-このスクリプトを用意することでワンクリック、あるいは利用したいアプリと合わせて実行することでその手間が省けます。
+## プロジェクト構成
+- BingBlocker: 検索ボックスの Bing 結果を無効化するレジストリ操作ツール
+- bluetooth_handsfree_toggle: Bluetooth ハンズフリー (HFP) の有効/無効切り替えスクリプト
+- file-organizer: 日付別フォルダへファイルを整理するスクリプトを収録
+- PowerShell: 追加スクリプト格納用フォルダ
+- remove_ask_copilot_menu: コンテキストメニューの「Copilot に聞く」を制御するスクリプト
 
-
-[Bluetooth Hands-Free Toggleの詳細説明](./bluetooth_handsfree_toggle/README.md)
+## サブフォルダ README へのリンク集
+- [BingBlocker/README.md](BingBlocker/README.md)
+- [bluetooth_handsfree_toggle/README.md](bluetooth_handsfree_toggle/README.md)
+- [remove_ask_copilot_menu/README.md](remove_ask_copilot_menu/README.md)
