@@ -14,6 +14,7 @@ Windows 11 向けの PowerShell スクリプトをまとめたリポジトリで
 
 ## スクリプト色々
 
+- api-key-validator: 複数サービスの API キーを GUI で一括検証するツール
 - BingBlocker: 検索ボックスの Bing 結果を無効化するレジストリ操作ツール
 - bluetooth_handsfree_toggle: Bluetooth ハンズフリー (HFP) の有効/無効切り替えスクリプト
 - file-organizer: 日付別フォルダへファイルを整理するスクリプト
@@ -23,6 +24,7 @@ Windows 11 向けの PowerShell スクリプトをまとめたリポジトリで
 
 ## サブフォルダ README へのリンク集
 
+- [api-key-validator/README.md](api-key-validator/README.md)
 - [BingBlocker/README.md](BingBlocker/README.md)
 - [bluetooth_handsfree_toggle/README.md](bluetooth_handsfree_toggle/README.md)
 - [remove_ask_copilot_menu/README.md](remove_ask_copilot_menu/README.md)
